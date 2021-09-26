@@ -1,0 +1,92 @@
+# 인쇄 종류
+post_type :
+  # 책자
+  - id : 1
+    name : 책자
+    binding_type :
+      - name : 무선철
+        cost : 10
+      - name : 중철
+        cost : 20
+      - name : 스프링
+        cost : 15
+      - name : 양장
+        cost : 20
+    post_size :
+      - name : A3
+        cost : 10
+      - name : A4
+        cost : 10
+      - name : 8절
+        cost : 10
+      - name : 16절
+        cost : 10
+      - name : 32절
+        cost : 10
+
+  # 리플렛
+  - id : 2
+    name : 리플렛
+    binding_type :
+      - name : 4단
+        cost : 0
+      - name : 3단
+        cost : 0
+      - name : 2단
+        cost : 0
+      - name : 해당 없음
+        cost : 0
+    post_size :
+      - name : 국 4절
+        cost : 10
+      - name : 8절
+        cost : 10
+      - name : A4
+        cost : 10
+      - name : 16절
+        cost : 10
+      - name : 32절
+        cost : 10
+
+  # 전단
+  - id : 3
+    name : 전단
+    post_size :
+      - name : A3
+        cost : 10
+      - name : 8절
+        cost : 10
+      - name : A4
+        cost : 10
+      - name : 16절
+        cost : 10
+      - name : A5
+        cost : 10
+      - name : 32절
+        cost : 10
+
+  # 포스터
+  - id : 4
+    name : 포스터
+    post_size :
+      - name : 2절
+        cost : 10
+      - name : 국2절
+        cost : 10
+      - name : 4절
+        cost : 10
+      - name : 국4절
+        cost : 10
+
+  # 쇼핑백
+  - id : 5
+    name : 쇼핑백
+    post_size:
+      - name: 2절
+        cost: 10
+      - name: 국2절
+        cost: 10
+      - name: 4절
+        cost: 10
+      - name: 국4절
+        cost: 10
