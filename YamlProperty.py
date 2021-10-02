@@ -1,23 +1,32 @@
 import yaml
 
 
-class Cost:
+class CostGroup:
     def __init__(self, name, cost):
         self.name = name
         self.cost = cost
 
+    def __str__(self):
+        return 'Cost [ name : {} , cost : {}'.format(self.name, self.cost)
+
 
 class PostType:
-    def __init__(self, id, name, bindingTypeList, costSizeList):
+    def __init__(self, id, name, bindingType, costSize):
+        bindingTypeList = []
+        costSizeList = []
+
+        for bindingTypeData in bindingType:
+            bindingCostGroup = CostGroup(bindingTypeData['name'], bindingTypeData['cost'])
+            bindingTypeList.append(bindingCostGroup)
+
+        for costSizeData in costSize:
+            costCostGroup = CostGroup(costSizeData['name'], costSizeData['cost'])
+            costSizeList.append(costCostGroup)
 
         self.id = id
         self.name = name
         self.bindingTypeList = bindingTypeList
         self.costSizeList = costSizeList
-
-    def __str__(self):
-        return 'id : {} , name : {} , bindingTypeList : {} , costSizeList : {}'\
-            .format(self.id, self.name, self.bindingTypeList, self.costSizeList)
 
 
 with open('data/select.yaml', 'rt', encoding='UTF8') as f:
@@ -34,6 +43,5 @@ with open('data/select.yaml', 'rt', encoding='UTF8') as f:
         if 'post_size' in post_type:
             post_size = post_type['post_size']
 
-        postType = PostType(post_type['id'], post_type['name'], binding_type, post_size);
+        postType = PostType(post_type['id'], post_type['name'], binding_type, post_size)
         postTypeList.append(postType)
-        print(postType.__str__())
